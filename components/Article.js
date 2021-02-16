@@ -86,7 +86,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+
+  {
+    title:'My First Article',
+    date:'Feb 16, 2021',
+    firstParagraph:'this is my first article',
+    secondParagraph:'everything is working great!',
+    thirdParagraph:'time to commit and push this and continue on to the menu!'
   }
+
 ];
 
 /*
@@ -147,6 +156,7 @@ date.textContent = articleObj.date
 firstP.textContent = articleObj.firstParagraph
 secondP.textContent = articleObj.secondParagraph
 thirdP.textContent = articleObj.thirdParagraph
+exButton.textContent = '+'
 
 //add eventlistener to button
 exButton.addEventListener('click', () =>{
