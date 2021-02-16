@@ -86,7 +86,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+
+  {
+    title:'My First Article',
+    date:'Feb 16, 2021',
+    firstParagraph:'this is my first article',
+    secondParagraph:'everything is working great!',
+    thirdParagraph:'time to commit and push this and continue on to the menu!'
   }
+
 ];
 
 /*
@@ -114,3 +123,54 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(articleObj){
+//Instantiate
+const articleContainer = document.createElement('div')
+const title = document.createElement('h2')
+const date = document.createElement('p')
+const firstP = document.createElement('p')
+const secondP = document.createElement('p')
+const thirdP = document.createElement('p')
+const exButton = document.createElement('span')
+
+//Setup the structure
+const articles = document.querySelector('.articles')
+
+articles.appendChild(articleContainer)
+articleContainer.appendChild(title)
+articleContainer.appendChild(date)
+articleContainer.appendChild(firstP)
+articleContainer.appendChild(secondP)
+articleContainer.appendChild(thirdP)
+articleContainer.appendChild(exButton)
+
+//Add proper class names
+articleContainer.classList.add('article')
+date.classList.add('date')
+exButton.classList.add('expandButton')
+
+//add textcontent
+title.textContent = articleObj.title
+date.textContent = articleObj.date
+firstP.textContent = articleObj.firstParagraph
+secondP.textContent = articleObj.secondParagraph
+thirdP.textContent = articleObj.thirdParagraph
+exButton.textContent = '+'
+
+//add eventlistener to button
+exButton.addEventListener('click', () =>{
+  articleContainer.classList.toggle('article-open')
+})
+
+return articleContainer
+
+}
+
+data.forEach((item)=>{
+  const article = articleMaker(item)
+
+  const articles = document.querySelector('.articles')
+  articles.appendChild(article)
+})
+
